@@ -41,20 +41,20 @@ class ODSegResponse(BaseModel):
     res_image: str
     class_segmentation:str
 
-@app.post("/predict", response_model = ODResponse)
-def predict(request: ODRequest):
-    x = request.image.split(",")
+# @app.post("/predict", response_model = ODResponse)
+# def predict(request: ODRequest):
+#     x = request.image.split(",")
 
-    image_np = base64.b64decode(x[1])
-    filename = 'process_image.jpg'  # I assume you have a way of picking unique filenames
-    with open(filename, 'wb') as f:
-        f.write(image_np)
-    res = detect_hand_yolo(filename)
-    with open(res, "rb") as image_file:
-        res_64 = base64.b64encode(image_file.read())
-        #res_64 = str(x[0])+","+str(res_64).encode('utf-8')
-        # res_64.encode('utf-8')
-    return ODResponse(res_image = res_64)
+#     image_np = base64.b64decode(x[1])
+#     filename = 'process_image.jpg'  # I assume you have a way of picking unique filenames
+#     with open(filename, 'wb') as f:
+#         f.write(image_np)
+#     res = detect_hand_yolo(filename)
+#     with open(res, "rb") as image_file:
+#         res_64 = base64.b64encode(image_file.read())
+#         #res_64 = str(x[0])+","+str(res_64).encode('utf-8')
+#         # res_64.encode('utf-8')
+#     return ODResponse(res_image = res_64)
 
 @app.post("/segment", response_model = ODSegResponse)
 def predict_segment(request: ODRequest):
