@@ -1,0 +1,9 @@
+
+detector:
+  input_size: 416
+  weight: /home/linhdt/Thang/darknet/yolov4/hand_yolov4-custom_best.weights
+  config: /home/linhdt/Thang/darknet/yolov4/hand_yolov4-custom.cfg
+  meta: /home/linhdt/Thang/darknet/Yolo_hand_tiny_detection/obj.data
+  hier_threshold: 0.45
+  nms_threshold: 0.45
+  confidence: 0.25

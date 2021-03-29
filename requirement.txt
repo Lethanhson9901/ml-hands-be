@@ -1,0 +1,14 @@
+aiofiles
+tensorflow
+opencv-python
+fastapi
+Pillow
+starlette
+gunicorn
+uvicorn
+pydantic
+python-multipart
+numpy
+uvloop
+httptools
+keras
